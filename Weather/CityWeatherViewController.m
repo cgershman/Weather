@@ -14,6 +14,7 @@
 #import "WeatherCollectionViewCell.h"
 
 #define kWeatherCollectionViewCellWidth 100.0f
+#define kFahrenheitTemperatureFormat @"%0.0f°F"
 
 
 @interface CityWeatherViewController () <UICollectionViewDataSource>
@@ -50,14 +51,20 @@
 
 - (void)showCurrentCityWeather {
     if (self.currentCityWeather.cod == 404) {
-        [[[UIAlertView alloc] initWithTitle:@"City Not Found" message:@"Please verify City and State." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CityWeatherViewController.error.citynotfound.title", nil) message:NSLocalizedString(@"CityWeatherViewController.error.citynotfound.message", nil)
+                                   delegate:nil
+                          cancelButtonTitle:NSLocalizedString(@"Button.OK.title", nil)
+                          otherButtonTitles:nil, nil] show];
+        return;
+    } else if (self.currentCityWeather.cod != 200) {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CityWeatherViewController.error.unknown.title", nil) message:NSLocalizedString(@"CityWeatherViewController.error.unknown.message", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Button.OK.title", nil) otherButtonTitles:nil, nil] show];
         return;
     }
     
     self.cityLabel.text = self.currentCityWeather.city;
-    self.temperatureLabel.text = [NSString stringWithFormat:@"%0.0f°F", [TemperatureConverter kelvinToFahrenheit:self.currentCityWeather.temperatureKelvin]];
-    self.minTemperatureLabel.text = [NSString stringWithFormat:@"%0.0f°F", [TemperatureConverter kelvinToFahrenheit:self.currentCityWeather.lowTemperatureKelvin]];
-    self.maxTemperatureLabel.text = [NSString stringWithFormat:@"%0.0f°F", [TemperatureConverter kelvinToFahrenheit:self.currentCityWeather.highTemperatureKelvin]];
+    self.temperatureLabel.text = [NSString stringWithFormat:kFahrenheitTemperatureFormat, [TemperatureConverter kelvinToFahrenheit:self.currentCityWeather.temperatureKelvin]];
+    self.minTemperatureLabel.text = [NSString stringWithFormat:kFahrenheitTemperatureFormat, [TemperatureConverter kelvinToFahrenheit:self.currentCityWeather.lowTemperatureKelvin]];
+    self.maxTemperatureLabel.text = [NSString stringWithFormat:kFahrenheitTemperatureFormat, [TemperatureConverter kelvinToFahrenheit:self.currentCityWeather.highTemperatureKelvin]];
     
     self.weatherCollectionWidthConstraint.constant = self.currentCityWeather.weather.count * kWeatherCollectionViewCellWidth;
     [self.weatherCollectionView reloadData];
@@ -75,7 +82,7 @@
         [CityWeatherService weatherForCity:city withCompletion:^(NSDictionary *response, NSError *error) {
             if (error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [[[UIAlertView alloc] initWithTitle:@"An Error Occurred" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+                    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CityWeatherViewController.error.unknown.title", nil) message:NSLocalizedString(@"CityWeatherViewController.error.unknown.message", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"Button.OK.title", nil) otherButtonTitles:nil, nil] show];
                 });
             } else {
                 self.currentCityWeather = [MTLJSONAdapter modelOfClass:CurrentCityWeather.class fromJSONDictionary:response error:NULL];

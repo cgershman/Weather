@@ -33,13 +33,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hac-Q7-0hP" userLabel="Zip Code Text Field">
-                                <rect key="frame" x="16" y="72" width="489" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="hac-Q7-0hP" userLabel="Zip Code Text Field">
+                                <rect key="frame" x="16" y="72" width="487" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRc-ae-H73" userLabel="Search Button">
-                                <rect key="frame" x="513" y="71" width="87" height="30"/>
+                                <rect key="frame" x="503" y="71" width="87" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="7m4-j1-VZ2"/>
                                 </constraints>
@@ -98,7 +98,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-O1-w78">
-                                        <rect key="frame" x="234" y="157" width="100" height="100"/>
+                                        <rect key="frame" x="234" y="167" width="100" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="UUb-SW-QfP"/>
@@ -118,10 +118,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFv-WR-TUX" userLabel="Weather Icon">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFv-WR-TUX" userLabel="Weather Icon">
                                                             <rect key="frame" x="25" y="32" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="Jg4-mD-hzQ"/>
+                                                                <constraint firstAttribute="width" constant="50" id="PtJ-1c-P0v"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyx-Jg-TMx" userLabel="Weather Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyx-Jg-TMx" userLabel="Weather Label">
                                                             <rect key="frame" x="8" y="8" width="84" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -131,6 +135,15 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="fFv-WR-TUX" secondAttribute="trailing" constant="17" id="GSp-YS-yza"/>
+                                                    <constraint firstItem="fFv-WR-TUX" firstAttribute="top" secondItem="eyx-Jg-TMx" secondAttribute="bottom" constant="3" id="KNu-hf-vql"/>
+                                                    <constraint firstItem="eyx-Jg-TMx" firstAttribute="top" secondItem="jZn-6v-I6d" secondAttribute="topMargin" id="QIv-Af-PKp"/>
+                                                    <constraint firstItem="eyx-Jg-TMx" firstAttribute="centerX" secondItem="fFv-WR-TUX" secondAttribute="centerX" id="dUe-Pb-5HR"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="fFv-WR-TUX" secondAttribute="bottom" constant="10" id="ijj-rB-kjx"/>
+                                                    <constraint firstItem="fFv-WR-TUX" firstAttribute="leading" secondItem="jZn-6v-I6d" secondAttribute="leadingMargin" constant="17" id="kLf-NR-Juj"/>
+                                                    <constraint firstItem="eyx-Jg-TMx" firstAttribute="leading" secondItem="jZn-6v-I6d" secondAttribute="leadingMargin" id="v5i-vy-8Kf"/>
+                                                </constraints>
                                                 <connections>
                                                     <outlet property="weatherIcon" destination="fFv-WR-TUX" id="zz5-Z8-t59"/>
                                                     <outlet property="weatherLabel" destination="eyx-Jg-TMx" id="vVk-xb-jTq"/>
@@ -162,7 +175,7 @@
                                     <constraint firstAttribute="trailing" secondItem="dcO-O1-w78" secondAttribute="trailing" id="kLm-Zy-NzH"/>
                                     <constraint firstItem="N28-iE-odc" firstAttribute="top" secondItem="hTw-8D-73R" secondAttribute="bottom" constant="8" id="m8r-eD-gLE"/>
                                     <constraint firstItem="gmw-5g-X24" firstAttribute="leading" secondItem="N28-iE-odc" secondAttribute="trailing" constant="7" id="n8g-8S-6g9"/>
-                                    <constraint firstItem="dcO-O1-w78" firstAttribute="top" secondItem="gmw-5g-X24" secondAttribute="bottom" constant="15" id="ruf-IR-Twn"/>
+                                    <constraint firstItem="dcO-O1-w78" firstAttribute="top" secondItem="gmw-5g-X24" secondAttribute="bottom" constant="25" id="ruf-IR-Twn"/>
                                     <constraint firstItem="hTw-8D-73R" firstAttribute="trailing" secondItem="vus-AC-wgV" secondAttribute="trailing" id="w2j-df-esS"/>
                                 </constraints>
                                 <variation key="default">
@@ -178,12 +191,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cRc-ae-H73" firstAttribute="leading" secondItem="hac-Q7-0hP" secondAttribute="trailing" constant="8" symbolic="YES" id="02v-rh-r9j"/>
+                            <constraint firstItem="cRc-ae-H73" firstAttribute="leading" secondItem="hac-Q7-0hP" secondAttribute="trailing" id="02v-rh-r9j"/>
                             <constraint firstItem="hac-Q7-0hP" firstAttribute="baseline" secondItem="cRc-ae-H73" secondAttribute="baseline" id="1cC-nE-1dr"/>
                             <constraint firstItem="hac-Q7-0hP" firstAttribute="leading" secondItem="bVc-ng-NUn" secondAttribute="leadingMargin" id="GTJ-2a-bWI"/>
                             <constraint firstAttribute="bottom" secondItem="6Q6-iD-zqe" secondAttribute="bottom" constant="20" symbolic="YES" id="WXQ-cp-faR"/>
                             <constraint firstItem="6Q6-iD-zqe" firstAttribute="top" secondItem="hac-Q7-0hP" secondAttribute="bottom" constant="15" id="kH8-I7-LCa"/>
-                            <constraint firstAttribute="trailing" secondItem="cRc-ae-H73" secondAttribute="trailing" id="mQp-t4-1R2"/>
+                            <constraint firstAttribute="trailing" secondItem="cRc-ae-H73" secondAttribute="trailing" constant="10" id="mQp-t4-1R2"/>
                             <constraint firstItem="6Q6-iD-zqe" firstAttribute="leading" secondItem="hac-Q7-0hP" secondAttribute="leading" id="pGv-NQ-MxD"/>
                             <constraint firstItem="hac-Q7-0hP" firstAttribute="top" secondItem="62Q-ZL-w3j" secondAttribute="bottom" constant="8" symbolic="YES" id="sgr-z2-9gX"/>
                             <constraint firstItem="6Q6-iD-zqe" firstAttribute="trailing" secondItem="bVc-ng-NUn" secondAttribute="trailingMargin" id="tMW-PN-xnB"/>

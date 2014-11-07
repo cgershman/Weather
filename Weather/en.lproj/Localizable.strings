@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Christopher Gershman on 11/6/14.
+  Copyright (c) 2014 Christopher Gershman. All rights reserved.
+*/
+
+// General
+"Button.OK.title" = "OK";
+
+// View Controllers
+"CityWeatherViewController.error.citynotfound.title" = "City Not Found";
+"CityWeatherViewController.error.citynotfound.message" = "Please verify City and State.";
+"CityWeatherViewController.error.unknown.title" = "An Error Occurred";
+"CityWeatherViewController.error.unknown.message" = "Please try again.";

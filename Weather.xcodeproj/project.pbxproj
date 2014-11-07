@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B36AC4C11BB64EE2BB26697 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7281C78D7EDE5C69DE7D67A /* libPods.a */; };
+		E116B57E1A0C74C30040B57C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E116B57C1A0C74C30040B57C /* Localizable.strings */; };
 		E19E9D5C1A0B287400259990 /* CityWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E9D5A1A0B287400259990 /* CityWeatherViewController.m */; };
 		E19E9D621A0B321300259990 /* CityWeatherService.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E9D611A0B321300259990 /* CityWeatherService.m */; };
 		E19E9D661A0B387E00259990 /* CurrentCityWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = E19E9D651A0B387E00259990 /* CurrentCityWeather.m */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		3881DF3865A9CB850C0579A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9B1EABE67C5B1252AA30002A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E116B57D1A0C74C30040B57C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E19E9D591A0B287400259990 /* CityWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityWeatherViewController.h; sourceTree = "<group>"; };
 		E19E9D5A1A0B287400259990 /* CityWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityWeatherViewController.m; sourceTree = "<group>"; };
 		E19E9D601A0B321300259990 /* CityWeatherService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityWeatherService.h; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 				3881DF3865A9CB850C0579A8 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E116B57B1A0C74570040B57C /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				E116B57C1A0C74C30040B57C /* Localizable.strings */,
+			);
+			name = en.lproj;
 			sourceTree = "<group>";
 		};
 		E19E9D5E1A0B288800259990 /* ViewControllers */ = {
@@ -160,6 +170,7 @@
 		E1DA0F8F1A0B22AD00E6352D /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				E116B57B1A0C74570040B57C /* en.lproj */,
 				E19E9D6A1A0B5EC400259990 /* Library */,
 				E19E9D631A0B383200259990 /* Models */,
 				E19E9D5F1A0B31EF00259990 /* Services */,
@@ -284,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DA0F9C1A0B22AD00E6352D /* Main.storyboard in Resources */,
+				E116B57E1A0C74C30040B57C /* Localizable.strings in Resources */,
 				E1DA0FA11A0B22AD00E6352D /* LaunchScreen.xib in Resources */,
 				E1DA0F9E1A0B22AD00E6352D /* Images.xcassets in Resources */,
 			);
@@ -380,6 +392,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E116B57C1A0C74C30040B57C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E116B57D1A0C74C30040B57C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E1DA0F9A1A0B22AD00E6352D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
