@@ -25,6 +25,7 @@
 
 - (void)setupWeather:(Weather *)weather {
     self.weatherLabel.text = weather.name;
+    self.weatherIcon.image = nil;
     
     if (weather.icon && weather.icon.length > 0) {
         

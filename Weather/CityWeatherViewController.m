@@ -78,7 +78,6 @@
     NSString *city = self.cityNameTextField.text;
     city = [city stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (city != nil && city.length > 0) {
-        __weak typeof(self)weakSelf = self;
         [CityWeatherService weatherForCity:city withCompletion:^(NSDictionary *response, NSError *error) {
             if (error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -87,7 +86,7 @@
             } else {
                 self.currentCityWeather = [MTLJSONAdapter modelOfClass:CurrentCityWeather.class fromJSONDictionary:response error:NULL];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf showCurrentCityWeather];
+                    [self showCurrentCityWeather];
                 });
             }
         }];
